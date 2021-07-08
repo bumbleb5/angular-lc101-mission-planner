@@ -11,6 +11,8 @@ export class CrewComponent implements OnInit {
 
     crew: object[] = [];
 
+    selected: object = null;
+
     candidates: object[] = [
         {name: "Sally Ride", photo: 'https://handlers.education.launchcode.org/static/images/sally-ride.jpg'},
         {name: "Mae Jemison", photo: 'https://handlers.education.launchcode.org/static/images/mae-jemison.jpg'},
@@ -32,7 +34,7 @@ export class CrewComponent implements OnInit {
         
         } else {
             
-            this.crew.splice(this.candidates.indexOf(member), 1);
+            this.crew.splice(this.crew.indexOf(member), 1);
 
         }
     }
