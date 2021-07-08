@@ -29,15 +29,15 @@ export class EquipmentComponent implements OnInit {
 
     addItem(equipment: object): boolean {
 
-        this.cargoHold.push(equipment);
+        if (!this.cargoHold.includes(equipment)) {
 
-        this.cargoMass += this.equipmentItems[this.equipmentItems.indexOf(equipment)]['mass'];
-
-        // console.log(this.equipmentItems[this.equipmentItems.indexOf(equipment)]['mass']);
+            this.cargoHold.push(equipment);
+            
+            this.cargoMass += this.equipmentItems[this.equipmentItems.indexOf(equipment)]['mass'];
+        }
 
         return this.cargoMass >= this.maximumAllowedMass - 200;
 
-        return true;
     }
 
     isIneligable(item: object): boolean {
